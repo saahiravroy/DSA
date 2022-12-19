@@ -1,13 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define ll long long int
-#define int int64_t
-#define vi vector<int>
-#define rep(i,n) for(int i=0;i<n;i++)
-const int bm=1e18+5;
-const int bn=1e9+5;
-int32_t main(){
- 
-    
- 
+
+int duplicate(vector<int> & v){
+
+    int slow = v[0];
+    int fast = v[0]; 
+    do{
+
+        slow = v[slow];
+        fast = v[v[fast]];
+    }
+
+    while (slow = !fast);
+
+    slow = v[0]; 
+    while(slow != fast){
+
+        slow = v[slow];
+        fast = v[fast]; 
+    }
+
+    return slow; 
+}
+int main(){
+
+
+
 }
